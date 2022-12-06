@@ -33,8 +33,8 @@ monescript syntax is inspired by [Ledger](http://ledger-cli.org) journal syntax.
 features that are currently supported by monescript parser:
 
 - Transaction format
-  - YYYY/MM/DD date format
-  - $ currency
+  - YYYY-MM-DD date format
+  - BTC currency
   - simple arithmetic value expressions (+, -, *, /)
   - notes prefixed with ';'
 - line comments prefixed with ';' or '#'
@@ -54,30 +54,30 @@ if journal is not balanced. monescript will not be able to analyze the journal a
 bucket Assets:Bank:Checking 
 
 2017/1/9 * The Doughnut
-  Expenses:Food:Takeout                  $10.10
+  Expenses:Food:Takeout                  BTC10.10
   Assets:Bank:Checking 
 
 2017/1/7 * Pharmacy One
-  Expenses:Pharmacy                      $22.34
+  Expenses:Pharmacy                      BTC22.34
 # don't have to specify the source account, when defined with bucket command above  
 
 2017/2/1 * PartyShack
   ; monescript can compute simple expressions, like this tax calculation 
-  Expenses:Entertainment                 ($5.89 * 1.05) 
-  Expenses:Clothing                      $16.72
+  Expenses:Entertainment                 (BTC5.89 * 1.05) 
+  Expenses:Clothing                      BTC16.72
   Assets:Bank:Checking 
 
 ; You can insert arbitrary comments between transactions
 2017/1/13 * Groceries and More
-  Expenses:Food:Grocery                  $29.32 ; Or for each posting
+  Expenses:Food:Grocery                  BTC29.32 ; Or for each posting
   Assets:Bank:Checking 
 
 2017/2/3 * Laser Play
-  Expenses:Entertainment                 $45.96
+  Expenses:Entertainment                 BTC45.96
 
 2017/2/4 * Eastern Gas
-  Expenses:Bills:Gas                     $47.64
-  Assets:Bank:Checking                   $-47.64 
+  Expenses:Bills:Gas                     BTC47.64
+  Assets:Bank:Checking                   BTC-47.64 
 
 ````
 

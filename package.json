@@ -17,7 +17,8 @@
     "uib": "browserify src/ui/main.js -o src/ui/_js/bundle.js",
     "build-ui-bundle-min": "uglify -s src/ui/bundle.js -o src/ui/bundle-min.js",
     "pretest": "npm run build-grammar",
-    "test": "jasmine"
+    "test": "jasmine",
+    "start": "open src/ui/index.html"
   },
   "dependencies": {
     "big.js": "^4.0.2",

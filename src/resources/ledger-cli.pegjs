@@ -56,7 +56,7 @@ transaction
     }
 
 date
-  = year:year "/" month:month "/" day:day { return {year:year, month:month, day: day}; }
+  = year:year "-" month:month "-" day:day { return {year:year, month:month, day: day}; }
 
 year
     = digits:[0-9]+ {
@@ -150,7 +150,7 @@ mainCommentPrefix
   = ";"
 
 amount
-  = currency:"$" amount:Number {return {currency:currency, amount:amount};} /
+  = currency:"BTC" amount:Number {return {currency:currency, amount:amount};} /
     expression:valueExpression {return {amount:expression};}
 
 account
@@ -220,7 +220,7 @@ AmountLiteral
   = c:Currency n:Number {return {currency: c, amount: n, type: 'Literal'};}
 
 Currency
- = "$"
+ = "BTC"
 
 __
   = space*

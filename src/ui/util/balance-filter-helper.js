@@ -12,6 +12,7 @@ module.exports = {
     );
 
     let tree = {};
+    console.log('filteredBalanceTree', b2)
     b2.forEach(a => {
       let branchLevel = tree;
       a.account.forEach(n => {
@@ -26,8 +27,10 @@ module.exports = {
         }
         branchLevel = nextLevel;
       });
-      branchLevel.balance =  parseFloat(a.balance.toFixed(2));
-      branchLevel.currency = a.currency;
+      // branchLevel.balance =  parseFloat(a.balance.toFixed(2));
+      branchLevel.balance =   `${a.balance.toPrecision(8)} BTC`;
+      // branchLevel.currency = a.currency;
+      branchLevel.currency = 'BTC';
     });
 
     return tree.accounts;
@@ -92,7 +95,7 @@ function accountsTotal(accounts){
     return {balance: a.balance.plus(b.balance)};
   }, {balance: Big(0)});
 
-  return parseFloat(sum.balance.toFixed(2));
+  return parseFloat(sum.balance.toPrecision(4));
 }
 
 function createPostingAccountFilter(filter){

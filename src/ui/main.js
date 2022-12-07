@@ -24,8 +24,8 @@ var app = new Vue({
   },
   beforeMount: function(){
       var self = this;
-      var text = sampleGenerator.generateYearJournal();
-      this.createJournal(text);
+      // var text = sampleGenerator.generateYearJournal();
+      // this.createJournal(text);
   },
   mounted(){
     $(this.$refs.accordion).on("show.bs.collapse", this.collapsedGraph)
@@ -59,6 +59,7 @@ var app = new Vue({
       try{
         while((chunk = parser.next()) != null){
           journal.add(chunk);
+          console.log('journal', journal)
         }
 
         $('#topTab a[href="#transactions"]').tab('show');
